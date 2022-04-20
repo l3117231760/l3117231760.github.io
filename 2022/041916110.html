@@ -501,30 +501,30 @@
 <blockquote>
 <p><strong>下面就是他们如果相遇fast就是快指针走的路程 slow就是慢指针走的路程 环外的路程为a 环的长度为b</strong>当他们相遇的时候：<br>$fast&#x3D;2slow$<br>$fast&#x3D;slow+nb$(相遇的时候fast比slow多走环的整数倍)<br>所以：<br>$slow&#x3D;nb$<br>$fast&#x3D;2nb$<br>又因为：<br>链表长度的入口节点位置：$s&#x3D;a+nb$<br>$slow+a&#x3D;s$<br>所以ptr&#x3D;head向前每次向前一其必和slow在入口节点相遇<br>相遇的地方就是a 再来一个双指针法，此指针和slow 一起向前走 a 步后，两者在入口节点重合。</p>
 </blockquote>
-<h2 id="代码实现-c语言版本"><a href="#代码实现-c语言版本" class="headerlink" title="代码实现(c语言版本)"></a>代码实现(c语言版本)</h2><pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h2 id="代码实现-c语言版本"><a href="#代码实现-c语言版本" class="headerlink" title="代码实现(c语言版本)"></a>代码实现(c语言版本)</h2><pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>head<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>show<span class="token operator">=</span>head<span class="token punctuation">;</span>
     <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>fast<span class="token operator">=</span>head<span class="token punctuation">;</span>
     <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>ptr<span class="token operator">=</span>head<span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">-></span>next<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
         show<span class="token operator">=</span>show<span class="token operator">-></span>next<span class="token punctuation">;</span>
         fast<span class="token operator">=</span>fast<span class="token operator">-></span>next<span class="token operator">-></span>next<span class="token punctuation">;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>show<span class="token operator">==</span>fast<span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">{</span>
             <span class="token keyword">while</span><span class="token punctuation">(</span>show<span class="token operator">!=</span>ptr<span class="token punctuation">)</span>
-            <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token punctuation">{</span>
                 show<span class="token operator">=</span>show<span class="token operator">-></span>next<span class="token punctuation">;</span>
                 ptr<span class="token operator">=</span>ptr<span class="token operator">-></span>next<span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
             <span class="token keyword">return</span> show<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
                 
