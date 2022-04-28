@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="位运算, Hexo">
+    <meta name="keywords" content="Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>位运算 | Hexo</title>
+    <title>Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">位运算</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -454,17 +454,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                                <span class="chip bg-color">位运算</span>
-                            </a>
-                        
-                            <a href="/tags/c%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">c语言</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -476,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-21
+                    2022-04-28
                 </div>
                 
 
@@ -497,50 +489,83 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="位运算的分类"><a href="#位运算的分类" class="headerlink" title="位运算的分类"></a>位运算的分类</h2><p><font color='red'>按位运算</font>：左移、右移、按位与按位或、异或、 取反,取相反数</p>
+                <hr>
+<p>‘mathjax’ : true<br>title: 排序<br>abbrlink: 16113<br>catagories: date struct<br>tags:  计算机组成原理</p>
+<p>comments : true</p>
+<hr>
+<h1 id="计算机组成原理（一）"><a href="#计算机组成原理（一）" class="headerlink" title="计算机组成原理（一）"></a>计算机组成原理（一）</h1><blockquote>
+<p>[toc]</p>
+</blockquote>
+<h2 id="计算机系统简介"><a href="#计算机系统简介" class="headerlink" title="计算机系统简介"></a>计算机系统简介</h2><h3 id="计算机的软硬件概念"><a href="#计算机的软硬件概念" class="headerlink" title="计算机的软硬件概念"></a>计算机的软硬件概念</h3><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202204281542904.png" alt="计算机组成原理.软硬件"></p>
+<p>计算机系统由“<strong>软件</strong>”与“<strong>硬件</strong>”两大部分组成</p>
 <ul>
-<li><p>右移：<code>&gt;&gt;</code>右移一位相当于 &#x2F;2 常见用法 <code>mid=(l-r)&gt;&gt;1+l;</code>用这种方法可以避免<code>mid=(l+R)/2</code><font color='red'>l+R</font>会超过int的范围的问题，并且位运算的速度比<code>mid=(l-r)&gt;&gt;1+l;</code>的速度快很多</p>
-</li>
-<li><p>左移 :<code>&lt;&lt;</code>左移一位相当于 *2 没什么好说的就是速度比较快</p>
-</li>
-<li><p>按位与:<code>&amp;</code>都为一为一其他为0<code>0&amp;0=0</code> <code>0&amp;1=1</code> <code>1&amp;1=1</code></p>
-</li>
+<li>“<strong>硬件</strong>” ：计算机的实体部分，他是由看得见摸得着的各种元器件</li>
+<li>“<strong>软件</strong>”：由人们事先编制的具有特殊功能的程序组成，看不见、摸不着。</li>
 </ul>
-<pre class=" language-c"><code class="language-c"><span class="token number">01010110</span>
-        <span class="token operator">&amp;</span>
-<span class="token number">01001001</span>
-</code></pre>
-<p>按位与的结果</p>
-<pre class=" language-c"><code class="language-c"><span class="token number">01000000</span>
-</code></pre>
+<p>计算机的软件又通常可以分为：“系统软件”和“应用软件”</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202204281528083.jpeg" alt="计算机原理.软件x"></p>
+<p><strong>系统软件</strong>又称为系统程序，主要用来管理整个计算机系统，监视服务，使系统资源得到合理调度、高效运行。</p>
+<p>包括：</p>
+<ol>
+<li><p>标准程序库</p>
+</li>
+<li><p>语言处理程序（将汇编语言翻译为机器语言的汇编程序或将高级语言翻译成机器语言的编译程序）</p>
+</li>
+<li><p>操作系统（批处理系统、分时系统、实时系统）</p>
+</li>
+<li><p>服务程序(诊断程序、调试程序、连接程序等)</p>
+</li>
+<li><p>数据库<strong>管理</strong>系统</p>
+</li>
+<li><p>网络软件等</p>
+</li>
+</ol>
+<p><strong>应用软件</strong>又被称为应用程序，他是根据用户根据任务需要编制的各种程序</p>
+<ol>
+<li>科学计算程序</li>
+<li>数据处理程序</li>
+<li>过程控制程序</li>
+<li>事务管理程序等</li>
+</ol>
+<h3 id="计算机系统层次结构"><a href="#计算机系统层次结构" class="headerlink" title="计算机系统层次结构"></a>计算机系统层次结构</h3><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202204281528705.png" alt="简单的系统层次结构"></p>
+<p>计算机汇编语言没有通用性，每一台机器必须有一种与之对应的汇编语言，不利于计算机的广泛应用与发展，然后在20世纪60年代先后出现了各种各样的面向问题的高级语言，将高级语言翻译成机器语言程序的软件被称为<font color="red">语言处理系统</font>,翻译程序有两种：</p>
+<blockquote>
+<ol>
+<li>一种是编译程序   </li>
+<li>解释程序</li>
+</ol>
+</blockquote>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202204281541774.JPG" alt="编译和解释"></p>
 <ul>
-<li><p>按位或：<code>|</code>  <code>1|1=1</code>、 <code>1|0=1</code>、 <code>0|0=0</code></p>
-</li>
-<li><p>异或：<code>^</code>,可以理解为无进位加法 <code>1^1=0</code>、<code>0^1=1</code>、<code>0^0=0</code></p>
-</li>
-<li><p>取反：<code>~</code>取反包含符号位<code>0</code>全部变为<code>1</code>,<code>1</code>全部变为<code>0</code>.</p>
-</li>
-<li><p>取相反数：<code>-</code>,这是一个复杂的过程 有符号正数在内存中的存储为 原码第一位符号位为0<br>而负数在内存中的存储为补码 先把正数的符号位变为1然后去反加一就可以了</p>
-</li>
+<li><strong>编译程序</strong>：是将用户编写高级语言程序的全部语句一次翻译成机器语言程序，而后再执行机器语言程序。因此只要源程序不变，就无须再次进行翻译，由高级语言，一次变换直接变为机器语言,生成为<code>.exe</code>的文件,那翻译来说，就是每次翻译一句写下来，一次性写完后，下次再次使用的时候，直接看自己写完的就可以了。(c语言、c++)</li>
+<li><strong>解释程序</strong>：是将源程序的一条语句翻译对应于机器语言的一条语句，并且立即执行这条语句。它的特点是翻译一次执行一次，下次执行也必须进行翻译，相当于一个翻译机一次翻译一句，即使每次说的相同也必须再次进行翻译。（JS、python）</li>
 </ul>
-<pre class=" language-c"><code class="language-c"><span class="token number">010011</span> <span class="token comment" spellcheck="true">//原码</span>
-<span class="token number">101100</span><span class="token comment" spellcheck="true">//取反 第一位变为1表示负数</span>
-<span class="token number">101101</span><span class="token comment" spellcheck="true">//加一变为对应的负数</span>
-</code></pre>
-<h2 id="位运算的应用"><a href="#位运算的应用" class="headerlink" title="位运算的应用"></a>位运算的应用</h2><p>-n&#x3D;~n+1；</p>
-<p>如何得到一个数的最低位的1：</p>
-<pre class=" language-c"><code class="language-c">x<span class="token operator">=</span>n<span class="token punctuation">;</span>
-t<span class="token operator">=</span>x<span class="token operator">&amp;</span><span class="token punctuation">(</span><span class="token operator">~</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-</code></pre>
-<p>如何得到一个数的最高位：可以利用循环不断左移、知道为0记录个数n然后pow（2，n）;或者下面这种方法，这一种学习的时候看了一个人按位运算的求法的播客但是找不到了，就没发了</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> cnt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> x<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//带去最高位的数</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    x<span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> d<span class="token operator">=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<p>多条微指令可以构成一条微程序，因为程序往往是需要多个操作的，如：CPU发出读指令和写指令等等，而计算机执行的其实是一个一个微指令。</p>
+<h2 id="计算机组成和计算机体系结构"><a href="#计算机组成和计算机体系结构" class="headerlink" title="计算机组成和计算机体系结构"></a>计算机组成和计算机体系结构</h2><blockquote>
+<p><font color="red">此处的<strong>透明</strong>–看不见</font></p>
+</blockquote>
+<blockquote>
+<p>计算机体系结构</p>
+</blockquote>
+<ul>
+<li><strong>计算机体系结构</strong>：是指可以被程序员看到的属性，这些属性通常指的是机器语言编程的程序员进行编写的,包括包括指令集、数据类型、储存寻址技术、I\O机理等。如果不同就是认为这两种机器的结构是各不相同的。<strong>如何设计硬件与软件之间的接口</strong>,如：<font color="red">有无乘法指令</font></li>
+</ul>
+<blockquote>
+<p>计算机组成（原理）</p>
+</blockquote>
+<ul>
+<li><strong>计算机组成</strong>:如何实现计算机体系结构所体现的属性，它包括了许多对于程序员透明的硬件细节，如：指令系统体现了机器的属性，这是数属于计算机结构问题，但是指令的实现，即如何取指令、取操作数，运算、送结构，这些都属于计算机组成。，因此当两台机器指令系统相同的时候，只能认为他们具有相同的结构。<strong>如何用硬件实现所定义的接口，对程序员<font color="red">“透明”</font></strong>,<font color="red">如何实现乘法指令.</font></li>
+</ul>
+<h2 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h2><p>说到计算机的基本组成就不得不说一下冯·诺依曼研究的EDVAC提出的”存储程序”的概念，当然这是废话没啥用了解就好</p>
+<p>重要的了解关于他的特点，这些特点到现在有些一直还沿用至今</p>
+<ul>
+<li>计算机由运算器、存储器、控制器、I&#x2F;O（input output）也就是输入设备和输出设备</li>
+<li>指令和数据以同等低位存放与存储器内，可按地址寻访，<font color="red">是地址还是指令不在于他的存放在存储器的位置而是在与他是由哪一个总线(BUS)(总线会在后面进行集中的讲解)进行传输的，或者最终存放与CPU中的哪一个寄存器中，对于一段01代码他即可一表示指令，也可以表示一个二进制数</font></li>
+<li>指令和数据都用二进制数表示，因为二进制的运算规则比较简单</li>
+<li>指令由操作码和地址码组成，操作码表示操作的性质（读、写、加、减、位运算等），地址码用来表示操作数在存储器中的位置。</li>
+<li>指令在存储器中按顺序存放，通常指令是按顺序执行的，但是也可以在某一个指令后面加入跳转指令，但是大多还都是顺序执行</li>
+<li>机器以<strong>运算器</strong>为中心，输入设备输出设备间的数据传送通过运算器完成<font color="red">（这点现在已经改了）</font></li>
+</ul>
 
                 
             </div>
@@ -567,7 +592,7 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://l3117231760.github.com/2022/042116112.html">http://l3117231760.github.com/2022/042116112.html</a>
+                    <a href="http://l3117231760.github.com/2022/04280.html">http://l3117231760.github.com/2022/04280.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -604,15 +629,7 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                                    <span class="chip bg-color">位运算</span>
-                                </a>
-                            
-                                <a href="/tags/c%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">c语言</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -654,9 +671,10 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04280.html">
                     <div class="card-image">
@@ -674,9 +692,9 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -685,6 +703,7 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -695,13 +714,13 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/042016111.html">
+                <a href="/2022/042116112.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="AVL树的调整方法">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="位运算">
                         
-                        <span class="card-title">AVL树的调整方法</span>
+                        <span class="card-title">位运算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -712,7 +731,7 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
                             </span>
                         <span class="publish-author">
                             
@@ -725,12 +744,12 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
+                        <span class="chip bg-color">位运算</span>
                     </a>
                     
-                    <a href="/tags/AVL/">
-                        <span class="chip bg-color">AVL</span>
+                    <a href="/tags/c%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">c语言</span>
                     </a>
                     
                 </div>
@@ -898,13 +917,6 @@ t<span class="token operator">=</span>x<span class="token operator">&amp;</span>
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
