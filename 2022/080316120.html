@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="JAVA运行机制和开发细节, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>JAVA运行机制和开发细节 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">JAVA运行机制和开发细节</h1>
                 </div>
             </div>
         </div>
@@ -454,9 +454,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -489,32 +493,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>‘mathjax’ : faluse<br>title: DOS的基本原理<br>abbrlink: 16121</p>
-<p>catagories: JAVA<br>tags: </p>
-<ul>
-<li>JAVA</li>
-<li>comments : true</li>
-</ul>
-<h1 id="DOS的基本原理"><a href="#DOS的基本原理" class="headerlink" title="DOS的基本原理"></a>DOS的基本原理</h1><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208030744061.png" alt="image-20220803074402314"></p>
-<h2 id="相对路径和绝对路径"><a href="#相对路径和绝对路径" class="headerlink" title="相对路径和绝对路径"></a>相对路径和绝对路径</h2><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208030748728.png" alt="image-20220803074823539"></p>
-<p><strong>相对路径：从当前目录开始定位，形成的一个路径</strong></p>
-<p><strong>绝对路径：由D盘（顶级目录），开始定位，形成的路径</strong></p>
-<blockquote>
-<p>例如：假设当前在abc文件夹下的test100定位访问text200文件夹下的文件</p>
-<p>相对路径： ..&#x2F; 回到上一级</p>
-<p>..&#x2F;..&#x2F;abc2&#x2F;text200</p>
-<p>绝对路径: d:&#x2F;abc2&#x2F;text200</p>
+                <h1 id="Java运行机制和开发细节"><a href="#Java运行机制和开发细节" class="headerlink" title="Java运行机制和开发细节"></a>Java运行机制和开发细节</h1><h2 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h2><blockquote>
+<p>在每一次修改代码后都需要进行编译，因为Java的执行<code>JVM</code>识别<code>.class</code>文件，没有进行Javac的编译就无法对<code>.class</code>文件进行修改</p>
 </blockquote>
-<h2 id="Dos命令"><a href="#Dos命令" class="headerlink" title="Dos命令"></a>Dos命令</h2><ul>
-<li>dir：当前目录有什么内容，后面可以直接接绝对路径</li>
-<li>cd：切换盘符，打开，切换得到其他目录 cd &#x2F;D c: ,cd ..返回上一级，cd \ 到根目录，后面可跟响度路径，也可以个绝对路径</li>
-<li>del:删除路径</li>
-<li>move：移动，剪切路劲</li>
-<li>md：创建目录</li>
-<li>echo：echo ok&gt;ok.txt将对应内容写入文件，echo nul&gt;ko.txt创建空目录</li>
-<li>cls:清屏</li>
-<li>exit:关闭Dos</li>
-<li>tree：创建文件树</li>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021411821.png" alt="image-20220802141016899"></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021411075.png" alt="image-20220802141053819"></p>
+<h2 id="Java开发细节"><a href="#Java开发细节" class="headerlink" title="Java开发细节"></a>Java开发细节</h2><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021416427.png" alt="image-20220802141633866"></p>
+<ul>
+<li>程序的入口（主方法）</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li><p>Java 区分大小写</p>
+</li>
+<li><p>一个源文件只能有一个public类但是其他类的个数不限制，但是只要有一个类，在编译以后都会形成一个对应的class类</p>
+</li>
+<li><p><strong>如果源文件中有public类，文件名一定要与public类名相同</strong></p>
+</li>
+<li><p>在非public类中同样可以写程序的入口（main 主方法 ）通过其类名来访问对应类的主方法</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021426056.png" alt="image-20220802142543859"></p>
+</li>
 </ul>
 
                 
@@ -542,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://l3117231760.github.com/2022/08030.html">http://l3117231760.github.com/2022/08030.html</a>
+                    <a href="http://l3117231760.github.com/2022/080316120.html">http://l3117231760.github.com/2022/080316120.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,7 +578,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -621,18 +624,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08030.html">
+                <a href="/2022/080316121.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="DOS的基本原理">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">DOS的基本原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -642,9 +644,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -653,7 +655,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JAVA/">
+                        <span class="chip bg-color">JAVA</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -664,13 +673,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08031.html">
+                <a href="/2022/042816113.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="计算机组成原理（一）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">计算机组成原理（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -681,7 +690,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
                             </span>
                         <span class="publish-author">
                             
@@ -690,6 +699,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -855,6 +872,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
