@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JAVA运行机制和开发细节, Hexo">
+    <meta name="keywords" content="C语言中的关键字, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JAVA运行机制和开发细节 | Hexo</title>
+    <title>C语言中的关键字 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -335,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JAVA运行机制和开发细节</h1>
+                    <h1 class="description center-align post-title">C语言中的关键字</h1>
                 </div>
             </div>
         </div>
@@ -456,8 +456,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JAVA/">
-                                <span class="chip bg-color">JAVA</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
                     </div>
@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-03
+                    2022-09-16
                 </div>
                 
 
@@ -493,28 +493,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java运行机制和开发细节"><a href="#Java运行机制和开发细节" class="headerlink" title="Java运行机制和开发细节"></a>Java运行机制和开发细节</h1><h2 id="Java运行机制"><a href="#Java运行机制" class="headerlink" title="Java运行机制"></a>Java运行机制</h2><blockquote>
-<p>在每一次修改代码后都需要进行编译，因为Java的执行<code>JVM</code>识别<code>.class</code>文件，没有进行Javac的编译就无法对<code>.class</code>文件进行修改</p>
+                <h1 id="C语言中的关键字"><a href="#C语言中的关键字" class="headerlink" title="C语言中的关键字"></a>C语言中的关键字</h1><h2 id="extern"><a href="#extern" class="headerlink" title="extern"></a>extern</h2><blockquote>
+<p>extern 是用来进行声明的关键字（声明只是提前告诉编译器有这个东西并不会在内存中开辟空间）</p>
+<p>extern在声明变量的时候不能进行赋值，因为声明并没有进行开辟空间!!!</p>
 </blockquote>
-<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021411821.png" alt="image-20220802141016899"></p>
-<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021411075.png" alt="image-20220802141053819"></p>
-<h2 id="Java开发细节"><a href="#Java开发细节" class="headerlink" title="Java开发细节"></a>Java开发细节</h2><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021416427.png" alt="image-20220802141633866"></p>
-<ul>
-<li>程序的入口（主方法）</li>
-</ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">extern</span> <span class="token keyword">void</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span>
 </code></pre>
-<ul>
-<li><p>Java 区分大小写</p>
-</li>
-<li><p>一个源文件只能有一个public类但是其他类的个数不限制，但是只要有一个类，在编译以后都会形成一个对应的class类</p>
-</li>
-<li><p><strong>如果源文件中有public类，文件名一定要与public类名相同</strong></p>
-</li>
-<li><p>在非public类中同样可以写程序的入口（main 主方法 ）通过其类名来访问对应类的主方法</p>
-<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202208021426056.png" alt="image-20220802142543859"></p>
-</li>
-</ul>
+<p><strong>extern 用来声明变量或者来说声明函数</strong>，因为全局变量和函数是可以进行跨文件进行访问的，不进行声明的话在跨文件进行访问的时候变量会进行报错（显示变量未定义），而函数只会报LINK警告在编译的时候可以进行通过。</p>
+<p>extern对变量、函数进行声明后便不会在进行报警或者报错了</p>
+<h3 id="变量的跨文件访问"><a href="#变量的跨文件访问" class="headerlink" title="变量的跨文件访问"></a>变量的跨文件访问</h3><p><strong>text.c</strong></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161705858.png#crop=0&crop=0&crop=1&crop=1&id=bB6SO&margin=%5Bobject%20Object%5D&originHeight=249&originWidth=804&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>main.c</strong></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161705801.png#crop=0&crop=0&crop=1&crop=1&height=369&id=Id7GQ&margin=%5Bobject%20Object%5D&originHeight=291&originWidth=634&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=804"></p>
+<p><strong>会直接进行报错</strong></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161705338.png#crop=0&crop=0&crop=1&crop=1&height=250&id=F5P20&originHeight=127&originWidth=409&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=806"></p>
+<p><strong>Myfunction</strong>函数的跨文件访问:</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161710186.png#crop=0&crop=0&crop=1&crop=1&height=346&id=mtboD&originHeight=269&originWidth=621&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=799"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161712654.png#crop=0&crop=0&crop=1&crop=1&height=126&id=QXZer&originHeight=145&originWidth=888&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=769"></h2><p><strong>用extern进行声明后就会进行解决</strong></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161719337.png#crop=0&crop=0&crop=1&crop=1&height=361&id=bCYD3&originHeight=273&originWidth=588&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=777"></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161720332.png#crop=0&crop=0&crop=1&crop=1&height=959&id=FJK7g&margin=%5Bobject%20Object%5D&originHeight=1344&originWidth=1099&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=784"></p>
+<h3 id="extern是声明不能进行赋值"><a href="#extern是声明不能进行赋值" class="headerlink" title="extern是声明不能进行赋值"></a>extern是声明不能进行赋值</h3><p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161723109.png#crop=0&crop=0&crop=1&crop=1&height=1440&id=RyQu3&originHeight=1251&originWidth=681&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=784"></p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><blockquote>
+<ol>
+<li>static修饰的<strong>变量和函数</strong>不再能进行跨文件访问，只能在本文件内进行访问，<strong>若外部文件要对变量进行访问需要在本文件内提供接口函数来进行访问</strong> </li>
+<li>static 修饰局部变量会改变局部变量的生命周期，即他的作用域还是其所在的代码块，不过函数执行完毕没有进行销毁</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>作用： static为项目维护提供安全保证</p>
+</blockquote>
+<h3 id="static-修饰局部变量会改变局部变量的生命周期"><a href="#static-修饰局部变量会改变局部变量的生命周期" class="headerlink" title="static 修饰局部变量会改变局部变量的生命周期"></a>static 修饰局部变量会改变局部变量的生命周期</h3><p><strong>如果在代码快外进行访问会进行报错，而在代码块内没有任何问题</strong></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161742620.png#crop=0&crop=0&crop=1&crop=1&height=365&id=lhb4B&originHeight=470&originWidth=970&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=754"></p>
+<hr>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209161736708.png#crop=0&crop=0&crop=1&crop=1&height=502&id=GXnmZ&originHeight=511&originWidth=807&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=792"></p>
+<p><strong>实验结论：对于临时变量，在函数返回后就已经被销毁了,但是指针p指向i的地址，如果回收就会打印随机值的，但是确正常进行打印了，说明static改变了变量的生命周期，而i不能在函数外进行访问，说明static没有改变变量的作用域；</strong></p>
 
                 
             </div>
@@ -541,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://l3117231760.github.com/2022/080316120.html">http://l3117231760.github.com/2022/080316120.html</a>
+                    <a href="http://l3117231760.github.com/2022/091616122.html">http://l3117231760.github.com/2022/091616122.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +592,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JAVA/">
-                                    <span class="chip bg-color">JAVA</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
                         </div>
@@ -624,9 +637,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/091616122.html">
                     <div class="card-image">
@@ -644,9 +658,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -655,6 +669,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -673,13 +688,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/080316121.html">
+                <a href="/2022/080316120.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="DOS的基本原理">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JAVA运行机制和开发细节">
                         
-                        <span class="card-title">DOS的基本原理</span>
+                        <span class="card-title">JAVA运行机制和开发细节</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,13 +887,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
