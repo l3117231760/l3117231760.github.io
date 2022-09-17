@@ -493,7 +493,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="C语言中的关键字"><a href="#C语言中的关键字" class="headerlink" title="C语言中的关键字"></a>C语言中的关键字</h1><h2 id="extern"><a href="#extern" class="headerlink" title="extern"></a>extern</h2><blockquote>
+                <h1 id="C语言中的关键字"><a href="#C语言中的关键字" class="headerlink" title="C语言中的关键字"></a>C语言中的关键字</h1><h2 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h2><blockquote>
+<p>用来修饰局部变量，用来修饰全局变量会进行报错</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209171726673.png" alt="image-20220917171949545"></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209171726632.png" alt="image-20220917172042579"></p>
+</blockquote>
+<h2 id="register"><a href="#register" class="headerlink" title="register"></a>register</h2><blockquote>
+<p>最快的关键字 建议把变量直接保存到cache里面去（或者说直接在cache里面开辟空间来存放数据）</p>
+<p>注意： cache 中的为内存的映射没有地址 不可以对regirst修饰的变量进行取地址的操作</p>
+<p>register只是建议把这个变量放到cache中并不是强制！！！  最终是否放到cache中还是要有编译器来进行决定</p>
+<p>regirster关键字应当用在高频率读取的并不经常写入的变量上面，因为每一次写入都需要重新载入内存，然后在到cpu对其的值进行更改，最后写回内存，在写入cache会变的更加繁琐</p>
+</blockquote>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209171726646.png" alt="image-20220917172127424"></p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209171726640.png" alt="image-20220917172316038">extern</p>
+<blockquote>
 <p>extern 是用来进行声明的关键字（声明只是提前告诉编译器有这个东西并不会在内存中开辟空间）</p>
 <p>extern在声明变量的时候不能进行赋值，因为声明并没有进行开辟空间!!!</p>
 </blockquote>
@@ -688,13 +701,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/080316120.html">
+                <a href="/2022/080316121.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JAVA运行机制和开发细节">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="DOS的基本原理">
                         
-                        <span class="card-title">JAVA运行机制和开发细节</span>
+                        <span class="card-title">DOS的基本原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
