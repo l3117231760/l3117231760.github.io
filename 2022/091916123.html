@@ -494,62 +494,60 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="C语言中数据的存储"><a href="#C语言中数据的存储" class="headerlink" title="C语言中数据的存储"></a>C语言中数据的存储</h1><p><strong>C语言中的数据类型有很多：整形、浮点型、自定义类型，指针类型、void型。</strong></p>
-<font color="blue">       在计算机中数据以二进制的方式进行存储，C语言中定义变量就是在开辟空间，这个空间就像一个模子，放进去的时候不管他是是什么，出来的时候就是模子的形状，定义变量也是一样，不管他是怎么样的数据，他都会把数据放到你开辟的空间中去，当“边角料”过多就会发生截断，把多余的部分进行舍弃，C是保存位于低位的数据或者说是底权值的数据，只有在进行使用的时候才会关注它本身的性质进行解释而已。</font>
-
-<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Ftfscom%2Fi1%2F2834243173%2FTB2yPBfkwZC2uNjSZFnXXaxZpXa_!!2834243173.jpg&amp;refer=http%3A%2F%2Fimg.alicdn.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1666157901&amp;t=be9e53df5f1b168c4c4d2061610294f2" alt="img"></p>
-<h2 id="整形数据的存储"><a href="#整形数据的存储" class="headerlink" title="整形数据的存储"></a>整形数据的存储</h2><pre class=" language-lang-c"><code class="language-lang-c">char
-int 
-short
-long
-long long
+<p><font color="blue">       在计算机中数据以二进制的方式进行存储，C语言中定义变量就是在开辟空间，这个空间就像一个模子，放进去的时候不管他是是什么，出来的时候就是模子的形状，定义变量也是一样，不管他是怎么样的数据，他都会把数据放到你开辟的空间中去，当“边角料”过多就会发生截断，把多余的部分进行舍弃，C是保存位于低位的数据或者说是底权值的数据，只有在进行使用的时候才会关注它本身的性质进行解释而已。</font></p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Ftfscom%2Fi1%2F2834243173%2FTB2yPBfkwZC2uNjSZFnXXaxZpXa_!!2834243173.jpg&refer=http%3A%2F%2Fimg.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666157901&t=be9e53df5f1b168c4c4d2061610294f2" alt="img"></p>
+<h2 id="整形数据的存储"><a href="#整形数据的存储" class="headerlink" title="整形数据的存储"></a>整形数据的存储</h2><pre class=" language-c"><code class="language-c"><span class="token keyword">char</span>
+<span class="token keyword">int</span> 
+<span class="token keyword">short</span>
+<span class="token keyword">long</span>
+<span class="token keyword">long</span> <span class="token keyword">long</span>
 </code></pre>
-<font color="red">这里不考虑大小端的问题，因为存进去的时候需要遵循大小端的规则，在取出来的时候同样需要遵循大小端的规则！！！</font>
-
+<p><font color="red">这里不考虑大小端的问题，因为存进去的时候需要遵循大小端的规则，在取出来的时候同样需要遵循大小端的规则！！！</font></p>
 <ul>
 <li>C语言中数据的存储为补码进行存储的，在数据的存储过程中其中第一位为符号位，其中0表示这个数为正，1表示这个数为负数，其中正数的原码、反码、补码是相同的，即十进制转化为二进制是什么样子就是什么样子，拿int来进行举例：</li>
 </ul>
-<pre class=" language-lang-c"><code class="language-lang-c">10
-0000 0000 0000 0000 0000 0000 0000 1010 //原码
-0000 0000 0000 0000 0000 0000 0000 1010 //反码
-0000 0000 0000 0000 0000 0000 0000 1010 //补码
-38=32+4+2
-0000 0000 0000 0000 0000 0000 0010 0110//原码
-0000 0000 0000 0000 0000 0000 0010 0110//反码
-0000 0000 0000 0000 0000 0000 0010 0110//补码
+<pre class=" language-c"><code class="language-c"><span class="token number">10</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1010</span> <span class="token comment" spellcheck="true">//原码</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1010</span> <span class="token comment" spellcheck="true">//反码</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1010</span> <span class="token comment" spellcheck="true">//补码</span>
+<span class="token number">38</span><span class="token operator">=</span><span class="token number">32</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">+</span><span class="token number">2</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0010</span> <span class="token number">0110</span><span class="token comment" spellcheck="true">//原码</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0010</span> <span class="token number">0110</span><span class="token comment" spellcheck="true">//反码</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0010</span> <span class="token number">0110</span><span class="token comment" spellcheck="true">//补码</span>
 </code></pre>
 <ul>
 <li><p>C语言中负数的存储，原码、反码、补码便不再相同了拿int来进行举例：</p>
 <p><strong>原码-&gt;补码</strong></p>
 </li>
 </ul>
-<p>​                反码 = 原码按位取反但是符号位不变</p>
-<p>​                补码 = 反码 + 1</p>
-<p>​                <strong>补码-&gt;原码</strong></p>
+<p>​				反码 &#x3D; 原码按位取反但是符号位不变</p>
+<p>​				补码 &#x3D; 反码 + 1</p>
+<p>​				<strong>补码-&gt;原码</strong></p>
 <ol>
-<li><p>先求反码  反码 = 补码 - 1（日常使用）</p>
-<p>再求原码 原码=反码按位取反符号不变</p>
+<li><p>先求反码  反码 &#x3D; 补码 - 1（日常使用）</p>
+<p>再求原码 原码&#x3D;反码按位取反符号不变</p>
 </li>
 <li><p>再按 原码-&gt;补码的规则来一遍（计算机内部使用）</p>
 <p>先符号位不变按位取反然后加一</p>
 </li>
 </ol>
-<p>其中 负数的原码 + 补码 = 0；</p>
-<pre class=" language-lang-c"><code class="language-lang-c">-10
-1000 0000 0000 0000 0000 0000 1010 //原码
-1111 1111 1111 1111 1111 1111 0101 //反码
-                                +1
-----------------------------------
-1111 1111 1111 1111 1111 1111 0110 //补码
-
--38
-1000 0000 0000 0000 0000 0000 0010 0110 //原码
-1111 1111 1111 1111 1111 1111 1101 1001 //反码
-                                     +1
-------------------------------------------
-1111 1111 1111 1111 1111 1111 1101 1010 //补码
+<p>其中 负数的原码 + 补码 &#x3D; 0；</p>
+<pre class=" language-c"><code class="language-c"><span class="token operator">-</span><span class="token number">10</span>
+<span class="token number">1000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1010</span> <span class="token comment" spellcheck="true">//原码</span>
+<span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">0101</span> <span class="token comment" spellcheck="true">//反码</span>
+                                <span class="token operator">+</span><span class="token number">1</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">0110</span> <span class="token comment" spellcheck="true">//补码</span>
+    
+<span class="token operator">-</span><span class="token number">38</span>
+<span class="token number">1000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0010</span> <span class="token number">0110</span> <span class="token comment" spellcheck="true">//原码</span>
+<span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1101</span> <span class="token number">1001</span> <span class="token comment" spellcheck="true">//反码</span>
+                                     <span class="token operator">+</span><span class="token number">1</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1111</span> <span class="token number">1101</span> <span class="token number">1010</span> <span class="token comment" spellcheck="true">//补码</span>
 </code></pre>
-<h2 id="浮点数的存储"><a href="#浮点数的存储" class="headerlink" title="浮点数的存储"></a>浮点数的存储</h2><pre class=" language-lang-c"><code class="language-lang-c">float
-double
+<h2 id="浮点数的存储"><a href="#浮点数的存储" class="headerlink" title="浮点数的存储"></a>浮点数的存储</h2><pre class=" language-c"><code class="language-c"><span class="token keyword">float</span>
+<span class="token keyword">double</span>
 </code></pre>
 <p>浮点数的存储是依据国际标准IEEE（电气与电子工程协会）754标准，任何一个二进制浮点数都可以表示成下面的形式</p>
 <blockquote>
@@ -559,6 +557,8 @@ double
 <li>M表示有效数字 大于等于1 小于2</li>
 <li>2^E表示指数位 ， float中 ， E为无符号数因为没有负数，所以把127当成0的分界点，需要把求得的数加上127</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>下面有两条规定</p>
 <ol>
 <li>当E 为00000000的时候就把它当做接近于0  2的1-127次方 M前的一可以省略变为0.  …</li>
@@ -566,90 +566,69 @@ double
 </ol>
 </blockquote>
 <p>其中符号位在浮点数中用一位来进行表示，其他的M和E各不相同</p>
-<font size="6">float(4字节)</font>:
-
-![image-20220919141945131](https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506242.png)
-
-
-
-<font size="6">double（8字节）</font>:
-
-![image-20220919142218078](https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506035.png)
-
-```c
-5.5=4+1+0.5
-101.1=1.011*2^2
-S=0
-//E=2 //因为没有负数，所以把127当成0的分界点,小于127的为负数，需要加127 所以E=129
-E=129  
-M=011 //其中第一位的1可以舍弃，因为每个数1-2都有这个一可以不写如内存
-0 10000001 01100000000000000000000
-```
-
-可以来看下面的一串代码来练习一下
-
-```c
-#include<stdio.h>
-int main()
-{
-    int a = 9;
-    float *pi=(float*)&a;
-    printf("%d\n",a);
-    printf("%lf\n",*pi);
-    *pi=9.0;
-    printf("%d\n",a);
-    printf("%lf\n",*pi);
-    return 0;
-}
-```
-
-
-
-运行结果：
-
-![image-20220919143724552](https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506069.png)
-
-```c
-9
-0000 0000 0000 0000 0000 0000 0000 1001
-0 00000000 00000000000000000010001 //E全0在输出的时候为0
-9
-1001.0
-S=0
-E=130
-M=1.001
-0 10000010 00100000000000000000000
-0 10000010 00100000000000000000000 //计算器写的
-```
-
-![image-20220919145614134](https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506687.png)
-
-<font color="red" size="4">正好对应上面的存数据的时候不用管他是什么类型，只需要把他的二进制信息存入对应变量开辟的内存，在取出的时候按照（int float等等）规则进行解释就可以了</font>
-
-
-
-<h3 id="浮点误差的解决方法"><a href="#浮点误差的解决方法" class="headerlink" title="浮点误差的解决方法"></a>浮点误差的解决方法</h3><p>浮点数会有误差，就和我们十进制中的1/3一样是无限小数，可是存储的类型的内存是有限的，会产生误差，因为这种误差的存在当我们在进行判断的时候需要用其他的方式来。<img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191735189.png" alt="image-20220919173532225"></p>
+<p><font size="6">float(4字节)</font>:</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506242.png" alt="image-20220919141945131"></p>
+<p><font size="6">double（8字节）</font>:</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506035.png" alt="image-20220919142218078"></p>
+<pre class=" language-c"><code class="language-c"><span class="token number">5.5</span><span class="token operator">=</span><span class="token number">4</span><span class="token operator">+</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">0.5</span>
+<span class="token number">101.1</span><span class="token operator">=</span><span class="token number">1.011</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">2</span>
+S<span class="token operator">=</span><span class="token number">0</span>
+<span class="token comment" spellcheck="true">//E=2 //因为没有负数，所以把127当成0的分界点,小于127的为负数，需要加127 所以E=129</span>
+E<span class="token operator">=</span><span class="token number">129</span>  
+M<span class="token operator">=</span><span class="token number">011</span> <span class="token comment" spellcheck="true">//其中第一位的1可以舍弃，因为每个数1-2都有这个一可以不写如内存</span>
+<span class="token number">0</span> <span class="token number">10000001</span> <span class="token number">01100000000000000000000</span>
+</code></pre>
+<p>可以来看下面的一串代码来练习一下</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> <span class="token operator">*</span>pi<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lf\n"</span><span class="token punctuation">,</span><span class="token operator">*</span>pi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>pi<span class="token operator">=</span><span class="token number">9.0</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lf\n"</span><span class="token punctuation">,</span><span class="token operator">*</span>pi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506069.png" alt="image-20220919143724552"></p>
+<pre class=" language-c"><code class="language-c"><span class="token number">9</span>
+<span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">0000</span> <span class="token number">1001</span>
+<span class="token number">0</span> <span class="token number">00000000</span> <span class="token number">00000000000000000010001</span> <span class="token comment" spellcheck="true">//E全0在输出的时候为0</span>
+<span class="token number">9</span>
+<span class="token number">1001.0</span>
+S<span class="token operator">=</span><span class="token number">0</span>
+E<span class="token operator">=</span><span class="token number">130</span>
+M<span class="token operator">=</span><span class="token number">1.001</span>
+<span class="token number">0</span> <span class="token number">10000010</span> <span class="token number">00100000000000000000000</span>
+<span class="token number">0</span> <span class="token number">10000010</span> <span class="token number">00100000000000000000000</span> <span class="token comment" spellcheck="true">//计算器写的</span>
+</code></pre>
+<p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506687.png" alt="image-20220919145614134"></p>
+<p><font color="red" size="4">正好对应上面的存数据的时候不用管他是什么类型，只需要把他的二进制信息存入对应变量开辟的内存，在取出的时候按照（int float等等）规则进行解释就可以了</font></p>
+<h3 id="浮点误差的解决方法"><a href="#浮点误差的解决方法" class="headerlink" title="浮点误差的解决方法"></a>浮点误差的解决方法</h3><p>浮点数会有误差，就和我们十进制中的1&#x2F;3一样是无限小数，可是存储的类型的内存是有限的，会产生误差，因为这种误差的存在当我们在进行判断的时候需要用其他的方式来。<img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191735189.png" alt="image-20220919173532225"></p>
 <p>可以通过引入</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
-#include<float.h>
-#include<math.h>
-int main()
-{
-    double c=10.0;
-    double a=0.9;
-    if(c-a*10==0.1)
-    {
-        printf("bingo");
-    };
-    if(fabs(c-a*10)<FLT_DIG)
-    {
-        printf("xin bingo");
-    };
-    return 0;
-};
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;float.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;math.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> c<span class="token operator">=</span><span class="token number">10.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> a<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">-</span>a<span class="token operator">*</span><span class="token number">10</span><span class="token operator">==</span><span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"bingo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span>c<span class="token operator">-</span>a<span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>FLT_DIG<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"xin bingo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>输出</p>
-<pre class=" language-lang-c"><code class="language-lang-c">xin binggo
+<pre class=" language-c"><code class="language-c">xin binggo
 </code></pre>
 
                 
