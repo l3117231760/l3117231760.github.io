@@ -499,19 +499,19 @@
             <div id="articleContent">
                 <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><h2 id="位运算的分类"><a href="#位运算的分类" class="headerlink" title="位运算的分类"></a>位运算的分类</h2><p><font color='red'>按位运算</font>：左移、右移、按位与按位或、异或、 取反,取相反数</p>
 <ul>
-<li><p>右移：<code>&gt;&gt;</code>右移一位相当于 /2 常见用法 <code>mid=(l-r)&gt;&gt;1+l;</code>用这种方法可以避免<code>mid=(l+R)/2</code><font color='red'>l+R</font>会超过int的范围的问题，并且位运算的速度比<code>mid=(l-r)&gt;&gt;1+l;</code>的速度快很多</p>
+<li><p>右移：<code>&gt;&gt;</code>右移一位相当于 &#x2F;2 常见用法 <code>mid=(l-r)&gt;&gt;1+l;</code>用这种方法可以避免<code>mid=(l+R)/2</code><font color='red'>l+R</font>会超过int的范围的问题，并且位运算的速度比<code>mid=(l-r)&gt;&gt;1+l;</code>的速度快很多</p>
 </li>
 <li><p>左移 :<code>&lt;&lt;</code>左移一位相当于 *2 没什么好说的就是速度比较快</p>
 </li>
 <li><p>按位与:<code>&amp;</code>都为一为一其他为0<code>0&amp;0=0</code> <code>0&amp;1=1</code> <code>1&amp;1=1</code></p>
 </li>
 </ul>
-<pre class=" language-lang-c"><code class="language-lang-c">01010110
-        &
-01001001
+<pre class=" language-c"><code class="language-c"><span class="token number">01010110</span>
+        <span class="token operator">&amp;</span>
+<span class="token number">01001001</span>
 </code></pre>
 <p>按位与的结果</p>
-<pre class=" language-lang-c"><code class="language-lang-c">01000000
+<pre class=" language-c"><code class="language-c"><span class="token number">01000000</span>
 </code></pre>
 <ul>
 <li><p>按位或：<code>|</code>  <code>1|1=1</code>、 <code>1|0=1</code>、 <code>0|0=0</code></p>
@@ -523,23 +523,23 @@
 <li><p>取相反数：<code>-</code>,这是一个复杂的过程 有符号正数在内存中的存储为 原码第一位符号位为0<br>而负数在内存中的存储为补码 先把正数的符号位变为1然后去反加一就可以了</p>
 </li>
 </ul>
-<pre class=" language-lang-c"><code class="language-lang-c">010011 //原码
-101100//取反 第一位变为1表示负数
-101101//加一变为对应的负数
+<pre class=" language-c"><code class="language-c"><span class="token number">010011</span> <span class="token comment" spellcheck="true">//原码</span>
+<span class="token number">101100</span><span class="token comment" spellcheck="true">//取反 第一位变为1表示负数</span>
+<span class="token number">101101</span><span class="token comment" spellcheck="true">//加一变为对应的负数</span>
 </code></pre>
-<h2 id="位运算的应用"><a href="#位运算的应用" class="headerlink" title="位运算的应用"></a>位运算的应用</h2><p>-n=~n+1；</p>
+<h2 id="位运算的应用"><a href="#位运算的应用" class="headerlink" title="位运算的应用"></a>位运算的应用</h2><p>-n&#x3D;~n+1；</p>
 <p>如何得到一个数的最低位的1：</p>
-<pre class=" language-lang-c"><code class="language-lang-c">x=n;
-t=x&(~n+1)
+<pre class=" language-c"><code class="language-c">x<span class="token operator">=</span>n<span class="token punctuation">;</span>
+t<span class="token operator">=</span>x<span class="token operator">&amp;</span><span class="token punctuation">(</span><span class="token operator">~</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
 </code></pre>
 <p>如何得到一个数的最高位：可以利用循环不断左移、知道为0记录个数n然后pow（2，n）;或者下面这种方法，这一种学习的时候看了一个人按位运算的求法的播客但是找不到了，就没发了</p>
-<pre class=" language-lang-c"><code class="language-lang-c">int cnt=0;
-int x;//带去最高位的数
-while(x!=0)
-{
-    x>>1;
-};
-int d=pow(2,n);
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> cnt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> x<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//带去最高位的数</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>x<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    x<span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> d<span class="token operator">=</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                 
