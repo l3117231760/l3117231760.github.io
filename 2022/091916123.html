@@ -607,7 +607,7 @@ M<span class="token operator">=</span><span class="token number">1.001</span>
 </code></pre>
 <p><img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191506687.png" alt="image-20220919145614134"></p>
 <p><font color="red" size="4">正好对应上面的存数据的时候不用管他是什么类型，只需要把他的二进制信息存入对应变量开辟的内存，在取出的时候按照（int float等等）规则进行解释就可以了</font></p>
-<p>浮点数会有误差，就和我们十进制中的1&#x2F;3一样是无限小数，可是存储的类型的内存是有限的，会产生误差，因为这种误差的存在当我们在进行判断的时候需要用其他的方式来。<img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191735189.png" alt="image-20220919173532225"></p>
+<h3 id="浮点误差的解决方法"><a href="#浮点误差的解决方法" class="headerlink" title="浮点误差的解决方法"></a>浮点误差的解决方法</h3><p>浮点数会有误差，就和我们十进制中的1&#x2F;3一样是无限小数，可是存储的类型的内存是有限的，会产生误差，因为这种误差的存在当我们在进行判断的时候需要用其他的方式来。<img src="https://myblogg.oss-cn-beijing.aliyuncs.com/img/202209191735189.png" alt="image-20220919173532225"></p>
 <p>可以通过引入</p>
 <pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;float.h></span></span>
